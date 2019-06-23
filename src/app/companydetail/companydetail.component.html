@@ -1,0 +1,113 @@
+
+
+<div class="main-content">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">Comapany</a></li>
+          <li class="breadcrumb-item"><a href="#">{{id}}</a></li>
+         
+        </ol>
+      </nav>
+    <div class="container-fluid">
+
+<div class="col-md-6">
+<div class="card">
+    <div class="card-header card-header-tabs card-header-primary">
+          <h4 class="card-title">Tech Mahindra Pvt. Ltd</h4>
+        <p class="card-category">Listed on 12/14/2019</p>
+    </div>
+    <div class="card-body">
+        <div class="tab-content">
+          
+            <div class="table-responsive">
+             
+            <span><h5>Total Registered HR :  <b class="text-right mynum badge badge-secondary" >32</b></h5> </span>
+            <hr>
+            <span><h5>Total Job Posted :  <b class="text-right mynum">32</b></h5> </span>
+            <hr>
+
+            <span><h5>Total Vacancy :  <b class="text-right mynum">32</b></h5> </span>
+            <hr>
+
+            <span><h5>Total Open Position :  <b class="text-right mynum">32</b></h5> </span>
+            <hr>
+           
+       
+             
+                  
+
+
+
+            </div>
+          
+            
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="card">
+   
+
+<div class="card-body">
+
+<div class="table-responsive">
+    <table class="table table-hover">
+        <thead class="">
+          <th>S. No.</th>
+            <th>
+                Client Id
+            </th>
+            <th>
+                HR Name
+            </th>
+            <th>
+                Job Posted
+            </th>
+            <th>
+                Active
+            </th>
+            <th>
+                Vacancy
+            </th>
+            <th>
+                Shortlisted
+            </th>
+            <th>
+                Offered
+            </th>
+            <th>
+                Rejected
+            </th>
+            <th>
+                Applied
+            </th>
+
+        </thead>
+        <tbody>
+            <tr *ngFor = "let con of myclientdata; let i = index">
+                <td>{{i+1}}</td>
+                <td>
+                    <a (click)="myclient(con.clientid)">
+                    {{con.clientid}}
+                </a>
+                </td>
+                <td>{{con.clientname}}</td>
+                <td>{{con.jobposted}}</td>
+                <td>{{con.active}}</td>
+                <td>{{con.vacancy}}</td>
+                <td>{{con.shortlisted}}</td>
+                <td>{{con.offered}}</td>
+                <td>{{con.rejected}}</td>
+                <td>{{con.applied}}</td>
+            </tr>
+     
+        </tbody>
+    </table>
+</div>
+</div>  
+</div>  
+
+
+</div>
+</div>

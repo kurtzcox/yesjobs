@@ -1,0 +1,77 @@
+
+
+<div class="main-content">
+    <div class="container-fluid">
+
+        <div class="card">
+            <div class="card-body txt1157">
+              <h5 class="card-title">Saurabh Raman</h5>
+              <h6 class="card-subtitle mb-2 text-muted">HR Executive</h6>
+              <div class="row">
+              <div class="col-md-8 div21151">
+               
+                <p>Time Jobs India Pvt. Ltd.</p>
+                <p>+91 9599241009</p>
+                <p>saurabh@timesjob.com</p>
+
+              </div>
+              <div class="col-md-4 div21151">
+                  <p><b>Address</b></p>
+                <p>321 Chowrangi Lane, New Darbaar</p>
+                <p>New Delhi</p>
+              <p>Delhi</p>
+              <p>110001</p>
+              </div>
+            </div>
+
+
+
+
+            </div>
+          </div>
+
+
+
+
+
+          <div class="card">
+              <div class="card-header">
+                Job Post (Active)
+              </div>
+              <div class="card-body">
+                  <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th scope="col">S.No.</th>
+                          <th scope="col">JobID</th>
+                          <th scope="col">Title</th>
+                          <th scope="col">Vacancy</th>
+                          <th scope="col">Shortlist</th>
+                          <th scope="col">Offered</th>
+                          <th scope="col">Reject</th>
+                          <th scope="col">Posted On</th>
+
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let con of myjoblist; let i= index">
+                          <th scope="row">{{i+1}}</th>
+                          <td>{{con.jobid}}</td>
+                          <td>{{con.title}}</td>
+                          <td>{{con.vacancy}}</td>
+                          <td>{{con.shortlisted}}</td>
+                          <td>{{con.offered}}</td>
+                          <td>{{con.rejected}}</td>
+                          <td>{{con.postedon}}</td>
+                        </tr>
+                
+                      </tbody>
+                    </table>
+              </div>
+            </div>
+
+
+
+
+      </div>
+      </div>

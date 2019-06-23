@@ -1,0 +1,153 @@
+
+
+<div class="main-content">
+        <div class="container-fluid">
+
+                <!-- <form class="example-form">
+                        <mat-form-field class="example-full-width">
+                          <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+                          <mat-autocomplete #auto="matAutocomplete">
+                            <mat-option *ngFor="let option of mycomapny1 | async" [value]="mycomapny1">
+                              {{mycomapny1}}
+                            </mat-option>
+                          </mat-autocomplete>
+                        </mat-form-field>
+                      </form> -->
+                      
+
+
+
+             
+
+                     
+
+           <div class="row">
+            
+
+              <div class="col-md-12">
+                 <div class="card">
+                        
+
+
+                    <div class="card-body">
+                          
+                            <div class="ng-autocomplete">
+                                    <ng-autocomplete class="cd"
+                                    [data]="mycomapny"
+                                    [searchKeyword]="keyword"
+                                    placeHolder="Enter the Comapany Name"
+                                    (selected)='selectEvent($event)'
+                                    (inputChanged)='onChangeSearch($event)'
+                                    (inputFocused)='onFocused($event)'
+                                    historyIdentifier="mycomapny"
+                                    [itemTemplate]="itemTemplate"
+                                    [notFoundTemplate]="notFoundTemplate">
+                                    </ng-autocomplete>
+                                    <ng-template #itemTemplate let-item>
+                                       <a [innerHTML]="item.name"></a>
+                                    </ng-template>
+                                    <ng-template #notFoundTemplate let-notFound>
+                                       <div [innerHTML]="notFound"></div>
+                                    </ng-template>
+                                 </div> 
+
+                       <div class="table-responsive">
+                         
+                          <div class="dropdown text-right">
+                             <select class="btn btn-primary dropdown-toggle" (change)="listrow2x($event.target.value)"
+                                >
+                                <option   *ngFor="let summary of mylistrow" value={{summary.value}}
+                                   >
+                                   {{summary.list}}
+                                </option>
+                             </select>
+                          </div>
+                          <div class="dropdown text-right">
+                             <select class="btn btn-primary dropdown-toggle" (change)="filterForeCasts($event.target.value)">
+                                <option  value="0">Sort</option>
+                                <option   *ngFor="let summary of mylist" value={{summary.value}}>
+                                   {{summary.sort}}
+                                </option>
+                             </select>
+                            </div>
+                             <table class="table" [hidden] = "tblr">
+                                <thead class=" text-primary">
+                                   <th>
+                                      Row
+                                   </th>
+                                   <th>
+                                      Company ID
+                                   </th>
+                                   <th>
+                                      Company
+                                   </th>
+                                   <th id="sort1"> 
+                                      Job Posted 
+                                      <i class="far fa fa-user"></i>
+                                   </th>
+                                   <th>
+                                      Vacancy
+                                   </th>
+                                   <th>
+                                      Open Position
+                                   </th>
+                                   <th>
+                                      Company Users
+                                   </th>
+                                   <th>
+                                      Listed
+                                   </th>
+                                </thead>
+                                <tbody >
+                                   <tr *ngFor="let com of letcomdata ; let i = index">
+                                      <td>
+                                         {{i+1 + myoffset}}
+                                      </td>
+                                      <td>
+                                         <a (click)="mycompdetail(com.compid)">
+                                         {{com.compid}}</a>
+                                      </td>
+                                      <td>
+                                         {{com.company}}
+                                      </td>
+                                      <td>
+                                         {{com.postcount}}
+                                      </td>
+                                      <td>
+                                         {{com.vacancy}}
+                                      </td>
+                                      <td>
+                                         {{com.openpost}}
+                                      </td>
+                                      <td>
+                                         {{com.hrcount}}
+                                      </td>
+                                      <td>
+                                         {{com.listed}}
+                                      </td>
+                                   </tr>
+                                </tbody>
+                             </table>
+                             <div class="imgs" *ngIf = "roller">
+                                <img src="../../assets/img/810.gif" class="img-responsive">
+                             </div>
+                         
+                          <nav aria-label="...">
+                             <ul class="pagination" >
+                                <li class="page-item disabled">
+                                   <a class="page-link" href="#" tabindex="-1">Previous</a>
+                                </li>
+                                <ul  class="pagination" *ngFor="let con of letpage">
+                                   <li [ngClass]="{'active': con.page == steps}" class="page-item"><a class="page-link" (click)="pagegina(con.offset, con.page)" >{{con.page}}</a></li>
+                                </ul>
+                                <li class="page-item">
+                                   <a class="page-link" href="#">Next</a>
+                                </li>
+                             </ul>
+                          </nav>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>
